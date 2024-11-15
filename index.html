@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>WeatherGuessr</title>
+</head>
+<body>
+    <h1>WeatherGuessr</h1>
+    <button onclick="startGame()">Játék indítása</button>
+    <div id="game-container">
+        <p>Találd ki a jelenlegi hőmérsékletet <span id="city-name">...</span>!</p>
+        <canvas id="city-canvas" width="400" height="200"></canvas>
+        <input type="number" id="temperature-guess" placeholder="Írd ide a tipped.. (C°)">
+        <button onclick="submitGuess()">Tipp</button>
+        <div id="result"></div>
+        <div id="scoreboard">Pontszámod: <span id="score">0</span></div>
+    </div>
+    <div id="end-screen">
+        <h2>Végeredmény</h2>
+        <p id="final-score"></p>
+        <div id="result-canvas"></div>
+        <div id="summary"></div>
+        <button onclick="startGame()">Újraindítás</button>
+    </div>
+    <script src="js/variables.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/coreGame.js"></script>
+    <footer><a href="https://github.com/acskrisz/WeatherGuessr" target="_blank">A forráskódhoz tartozó link</a></footer>
+</body>
+</html>
