@@ -20,7 +20,11 @@ function startGame() {
     actualTemperatures = [];
     usedCities = [];
     document.getElementById("score").textContent = score;
+    document.getElementById("user-section").style.display = "none";
+    document.getElementById("leaderboard-container").style.display = "none";
     document.getElementById("game-container").style.display = "block";
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("register-container").style.display = "none";
     document.getElementById("end-screen").style.display = "none";
     nextRound();
 }
@@ -49,8 +53,10 @@ async function nextRound() {
 }
 
 function endGame() {
+    saveScore(score);
     document.getElementById("game-container").style.display = "none";
     document.getElementById("end-screen").style.display = "block";
+    document.getElementById("leaderboard-container").style.display = "block";
 
     const finalScoreText = `A játék véget ért! Pontszámod: ${score}`;
     let performanceText;
@@ -103,4 +109,5 @@ function endGame() {
     });
     summaryHTML += "</div>";
     document.getElementById("summary").innerHTML = summaryHTML;
+    loadLeaderboard();
 }

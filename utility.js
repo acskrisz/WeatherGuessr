@@ -38,3 +38,4 @@ function updateResultText(guess, actualTemperature) {
 
     return { resultText, points };
 }
+
